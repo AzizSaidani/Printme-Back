@@ -17,7 +17,8 @@ mongoose.set('strictQuery', true);
 // Configure CORS to allow specific origins
 const allowedOrigins = [
   'http://localhost:4200', // For local development
-  'https://print-me-rosy.vercel.app' // Your deployed front-end URL
+  'https://print-me-rosy.vercel.app' ,// Your deployed front-end URL
+  'https://print-me-two.vercel.app/' // Your deployed front-end URL
 ];
 
 app.use(cors({
