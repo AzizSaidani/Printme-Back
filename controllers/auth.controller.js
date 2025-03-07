@@ -10,7 +10,7 @@ const transporter = nodemailer.createTransport({
   secure: false,
   auth: {
     user: 'saidani_aziz@hotmail.com',
-    pass: 'solutiongroupnext1//', // Ensure this is correct and valid
+    pass: 'solutiongroupnext1//',  // Ensure this is correct and valid
   },
 });
 
