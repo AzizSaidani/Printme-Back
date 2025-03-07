@@ -18,6 +18,7 @@ mongoose.set('strictQuery', true);
 const allowedOrigins = [
   'http://localhost:4200', // For local development
   'https://print-me-rosy.vercel.app' ,// Your deployed front-end URL
+  'https://printme-back.vercel.app/' ,// Your deployed front-end URL
   'https://print-me-two.vercel.app/' // Your deployed front-end URL
 ];
 
