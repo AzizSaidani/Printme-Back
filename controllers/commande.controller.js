@@ -1,4 +1,4 @@
-const Commande = require('../models/Commande.model');
+const Commande = require('../models/commande.model');
 const Cart = require('../models/cart.model');
 const mongoose = require('mongoose');
 
