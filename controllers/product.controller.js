@@ -1,6 +1,9 @@
 const Product = require('../models/product.model');
 const PDFDocument = require('pdfkit');
-const stripe = require('stripe')('sk_test_51Lyzt5GUzUAnKjP7lyDDM7pIo796ADLQ1tSA4GPYbNy72UxRVrgJiAlR7lpxDY4QgAOytVpOz3bIqogfwAOIzsQE00oqXQuusb');
+require('dotenv').config();
+
+const stripe = require('stripe')
+( process.env.STRIPE_KEY);
 
 
 

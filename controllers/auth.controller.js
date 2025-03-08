@@ -1,16 +1,17 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user.model');
-
 const nodemailer = require('nodemailer');
+require('dotenv').config();
+
 
 const transporter = nodemailer.createTransport({
   host: 'smtp-mail.outlook.com',
   port: 587,
   secure: false,
   auth: {
-    user: 'saidani_aziz@hotmail.com',
-    pass: 'solutiongroupnext1//',  // Ensure this is correct and valid
+    user: process.env.DESTINATION_MAIL,
+    pass: process.env.TRANSPORTER_PASSWORD,  // Ensure this is correct and valid
   },
 });
 
@@ -52,7 +53,7 @@ exports.resetPassword = async (req, res) => {
     // Update the reset link to include '/api/auth'
     const resetLink = `${req.protocol}://${req.get('host')}/api/auth/reset/${resetToken}`;
     const mailOptions = {
-      from: 'saidani_aziz@hotmail.com',
+      from: process.env.DESTINATION_MAIL,
       to: email,
       subject: 'Password Reset Request',
       text: `Click the following link to reset your password: ${resetLink}`,

@@ -1,14 +1,16 @@
 const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
 const { SMTPServer } = require('smtp-server');
+require('dotenv').config();
+
 
 const transporter = nodemailer.createTransport(smtpTransport({
   host: 'smtp.office365.com',
   port: 587,
   secure: false,
   auth: {
-    user: 'saidani_aziz@hotmail.com',
-    pass: 'solutiongroupnext1//'
+    user: process.env.DESTINATION_MAIL,
+    pass: process.env.TRANSPORTER_PASSWORD
   },
   logger: true,
   smtpServer: new SMTPServer({
@@ -20,7 +22,7 @@ exports.sendEmail = (req, res) => {
   const { recipients, subject, body } = req.body;
 
   const mailOptions = {
-    from: 'saidani_aziz@hotmail.com',
+    from: process.env.DESTINATION_MAIL,
     to: recipients,
     subject: subject,
     text: body,
