@@ -16,7 +16,7 @@ require('dotenv').config();
 // Middleware
 
 const corsOptions = {
-  origin: '*', // Allow frontend domain
+  origin: 'https://print-me-two.vercel.app', // Allow frontend domain
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // Allow cookies/auth headers
 };
